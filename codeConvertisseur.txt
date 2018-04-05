@@ -1,0 +1,40 @@
+package projet1;
+import java.util.Scanner;
+public class sdz1 {
+	public static void main(String[] args) {
+		char loop = 'O';
+		int conv = 0;
+		double temp, fara, cels;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("CONVERTISSEUR DEGRES CELSIUS ET DEGRES FAHRENHEIT\n");
+		System.out.println("-------------------------------------------------\n");
+		do {
+			do {
+				System.out.println("Choisissez le mode de conversion :");
+				System.out.println("1 - Convertisseur Celsius vers Fahrenheit\n");
+				System.out.println("2 - Convertisseur Fahrenheit vers Celsius");
+				conv = sc.nextInt();
+				sc.nextLine();
+				if (conv == 1) {
+					System.out.println("Entrez la température en °C à convertir :");
+					temp = sc.nextInt();
+					sc.nextLine();
+					fara = (((9.0/5.0) * temp ) + 32.0);
+					System.out.println(temp + "°C correspond à : " + fara + "°F\n");
+				}
+				else if (conv == 2) {
+					System.out.println("Entrez la température en °F à convertir :");
+					temp = sc.nextInt();
+					sc.nextLine();
+					cels = (((temp - 32.0) * 5.0) / 9.0);
+					System.out.println(temp + "°F correspond à : " + cels + "°C\n");
+				}
+			}while (conv != 1 && conv != 2);
+			do {
+				System.out.println("Voulez-vous continuer ? O/N");
+				loop = sc.nextLine().charAt(0);
+			}while (loop != 'O' && loop != 'N');
+		}while (loop == 'O');
+		System.out.println("Merci d'avoir utilisé le convertisseur G-E Corps et à bientôt !");
+	}
+}
